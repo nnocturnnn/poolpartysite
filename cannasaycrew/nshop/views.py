@@ -6,3 +6,6 @@ def index(request):
 
 def login(request):
     return render(request, "nshop/login.html")
+
+def register(request):
+    return render(request, "nshop/register.html")
