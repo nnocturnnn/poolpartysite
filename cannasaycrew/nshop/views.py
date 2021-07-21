@@ -7,18 +7,21 @@ def index(request):
     return render(request, "nshop/index.html")
 
 def login(request):
-    if request.method == 'POST':
-        user=request.POST['user']
-        passw=request.POST['pass']
-        user=auth.authenticate(username=user,password=passw)
-        if user is not None:
-            auth.login(request,user)
-            return redirect('/nakaz/')
+    if User.is_authenticate() == False:
+        if request.method == 'POST':
+            user=request.POST['user']
+            passw=request.POST['pass']
+            user=auth.authenticate(username=user,password=passw)
+            if user is not None:
+                auth.login(request,user)
+                return redirect('/nakaz/')
+            else:
+                messages.error(request,'invalid credentials!')
+                return redirect("login")
         else:
-            messages.error(request,'invalid credentials!')
-            return redirect("login")
+            return render(request, "nshop/login.html")
     else:
-        return render(request, "nshop/login.html")
+        return render(request, "nshop/index.html")
 
 def register(request):
     if request.method == 'POST':
