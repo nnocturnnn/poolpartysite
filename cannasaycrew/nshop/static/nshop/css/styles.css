@@ -10,12 +10,6 @@ body {
    
 }
 
-.sidenav {
-    height: 100%;
-    background-color:#2A2A2A;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
 
 
 .main {
@@ -59,11 +53,6 @@ body {
 }
 
 
-.login-main-text{
-    margin-top: 20%;
-    padding: 60px;
-    color: #fff;
-}
 
 .login-main-text h2{
     font-weight: 300;
