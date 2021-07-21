@@ -40,6 +40,8 @@
                   <li><a class="dropdown-item" href="#">Media</a></li>
                   <li><a class="dropdown-item" href="#">About</a></li>
                 </ul>
+                {% if user.is_authenticated %}
+                {% endif %}
               </li>
             </ul>
           </div>

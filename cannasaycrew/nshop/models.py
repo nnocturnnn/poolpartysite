@@ -7,8 +7,6 @@ User = get_user_model()
 
 # Create your models here.
 
-
-
 class Category(models.Model):
 
     name = models.CharField(max_length=255, verbose_name='Имя категории')
