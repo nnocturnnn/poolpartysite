@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,16 +77,17 @@ WSGI_APPLICATION = 'cannasaycrew.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default' : {
-    'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'canna',
-        'USER':'asydoruk',
-        'PASSWORD':'yourpassword',
-        'HOST':'localhost',
-    }
-}
+# DATABASES = {
+#     'default' : {
+#     'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':'canna',
+#         'USER':'asydoruk',
+#         'PASSWORD':'yourpassword',
+#         'HOST':'localhost',
+#     }
+# }
 
+DATABASES = {'default': dj_database_url.config(default='postgres://zvxzfkypismuhy:4a15b9097a1c7751f0bc843580c9b53d5404b8bc03052d245ebca84fbc26233c@ec2-54-74-156-137.eu-west-1.compute.amazonaws.com:5432/det7ohs5i6h31c')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
