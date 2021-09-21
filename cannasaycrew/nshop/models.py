@@ -2,8 +2,12 @@ from os import pathconf
 from django.db import models
 from django.db.models.fields.files import ImageField
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 
 User = get_user_model()
+# class User(AbstractUser):
+#     def __str__(self):
+#         return self.email
 
 # Create your models here.
 
@@ -17,11 +21,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-
     category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
     title = models.CharField(max_length=255, verbose_name="Имя")
     slug = models.SlugField(unique=True)
-    image = models.ImageField(verbose_name='Изображение')
+    image = models.ImageField(upload_to='static/',verbose_name='Изображение')
     deskription = models.TextField(verbose_name='Описание')
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Цена')
 
