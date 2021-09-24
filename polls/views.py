@@ -90,12 +90,15 @@ def detail(request):
     usr = request.user
     if request.method == "POST":
         if mono_check(usr.username):
+            link = url_generate(usr,request,'buy')
+            url = Urls(link=link,active=False)
+            url.save()
             if request.path[-1] == "2":
-                create_phys_ticket(url_generate(usr,request,'buy'),usr.email)
+                create_phys_ticket(link,usr.email)
                 context = {'price' : "350", 'backcolor' : 'green'}
                 return HttpResponse(template.render(context, request))
             else:
-                create_phys_ticket(url_generate(usr,request,'buy'),usr.email)
+                create_phys_ticket(link,usr.email)
                 context = {'price' : "400", 'backcolor' : 'green'}
                 return HttpResponse(template.render(context, request))
         else:

@@ -41,27 +41,26 @@ link to activate your account {url_generate(user,request,types).replace('nakaz',
     email.send()
 
 def create_phys_ticket(link, email_to):
-    paths = "static/polls/images/"
-
+    paths = "polls/static/polls/images/"
     url = pyqrcode.create(link)
-    url.png('myqr.png', scale = 6)
+    url.png('myqr.png', scale = 7)
     front_img = Image.open(paths + '1.png')
     back_img = Image.open(paths + '2.png')
-    qr = Image.open(paths + 'myqr.png')
+    qr = Image.open('myqr.png')
     front_img.paste(qr, (1575, 100), qr)
     front_img.save("new_img.png")
     back_img.paste(qr, (100, 100), qr)
     back_img.save("new_img2.png")
     email = EmailMessage('Ticket', 'Your ticket', 'mediandrey@gmail.com',[email_to,])
-    with open("/polls/images/new_img.png", "rb") as read_f:
-        with open("/polls/images/new_img2.png", "rb") as read_s:
+    with open("new_img.png", "rb") as read_f:
+        with open("new_img2.png", "rb") as read_s:
             filec = read_f.read()
             filec2 = read_s.read()
             email.attach("new_img.png", filec)
             email.attach("new_img2.png", filec2)
             email.send()
-    os.remove("/polls/images/new_img.png")
-    os.remove("/polls/images/new_img2.png")
+    os.remove("new_img.png")
+    os.remove("new_img2.png")
 
 
 def mono_check(username):

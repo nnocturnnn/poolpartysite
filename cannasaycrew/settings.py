@@ -27,7 +27,7 @@ SECRET_KEY = '$(@)na_reuv%z0a#(bcj%gy8_=w@om8q9h$3sv+mw2qixm*3w9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['poolsite.herokuapp.com',]
+ALLOWED_HOSTS = ['poolsite.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -87,6 +87,7 @@ WSGI_APPLICATION = 'cannasaycrew.wsgi.application'
 #         'HOST':'localhost',
 #     }
 # }
+DATABASE_URL = 'postgres://zvxzfkypismuhy:4a15b9097a1c7751f0bc843580c9b53d5404b8bc03052d245ebca84fbc26233c@ec2-54-74-156-137.eu-west-1.compute.amazonaws.com:5432/det7ohs5i6h31c'
 
 DATABASES = {'default': dj_database_url.config(default='postgres://zvxzfkypismuhy:4a15b9097a1c7751f0bc843580c9b53d5404b8bc03052d245ebca84fbc26233c@ec2-54-74-156-137.eu-west-1.compute.amazonaws.com:5432/det7ohs5i6h31c')}
 
