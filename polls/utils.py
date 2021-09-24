@@ -65,17 +65,17 @@ def create_phys_ticket(link, email_to):
 
 
 def mono_check(username):
-    token = 'uW7eDIX9HvtSmLNJWH_foBFQv6ojJgwurB4a0rJWK_5A'
-    mono = monobank.Client(token)
-    user_info = mono.get_client_info()
-    id_w = ""
-    for i in user_info['accounts']:
-        if i['type'] == 'white':
-            id_w = i['id']
-    time_now = datetime.datetime.now()
-    time_p = datetime.datetime.now() - datetime.timedelta(days=1)
-    stat = mono.get_statements(id_w, time_p, time_now)
-    last_tr = stat[0]
+    # token = 'uW7eDIX9HvtSmLNJWH_foBFQv6ojJgwurB4a0rJWK_5A'
+    # mono = monobank.Client(token)
+    # user_info = mono.get_client_info()
+    # id_w = ""
+    # for i in user_info['accounts']:
+    #     if i['type'] == 'white':
+    #         id_w = i['id']
+    # time_now = datetime.datetime.now()
+    # time_p = datetime.datetime.now() - datetime.timedelta(days=1)
+    # stat = mono.get_statements(id_w, time_p, time_now)
+    # last_tr = stat[0]
     # if 350 <= last_tr['amount'] / 100:
     #     if last_tr['comment'].lower() == username.lower():
     return True
