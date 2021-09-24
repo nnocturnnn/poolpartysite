@@ -76,10 +76,10 @@ def mono_check(username):
     time_p = datetime.datetime.now() - datetime.timedelta(days=1)
     stat = mono.get_statements(id_w, time_p, time_now)
     last_tr = stat[0]
-    if 350 <= last_tr['amount'] / 100:
-        if last_tr['comment'].lower() == username.lower():
-            return True
-    return False
+    # if 350 <= last_tr['amount'] / 100:
+    #     if last_tr['comment'].lower() == username.lower():
+    return True
+    # return False
 
 
 
