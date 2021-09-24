@@ -53,15 +53,15 @@ def create_phys_ticket(link, email_to):
     back_img.paste(qr, (100, 100), qr)
     back_img.save("new_img2.png")
     email = EmailMessage('Ticket', 'Your ticket', 'mediandrey@gmail.com',[email_to,])
-    with open("polls/images/new_img.png", "rb") as read_f:
-        with open("polls/images/new_img2.png", "rb") as read_s:
+    with open("/polls/images/new_img.png", "rb") as read_f:
+        with open("/polls/images/new_img2.png", "rb") as read_s:
             filec = read_f.read()
             filec2 = read_s.read()
             email.attach("new_img.png", filec)
             email.attach("new_img2.png", filec2)
             email.send()
-    os.remove("polls/images/new_img.png")
-    os.remove("polls/images/new_img2.png")
+    os.remove("/polls/images/new_img.png")
+    os.remove("/polls/images/new_img2.png")
 
 
 def mono_check(username):
