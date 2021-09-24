@@ -60,6 +60,8 @@ def create_phys_ticket(link, email_to):
             email.attach("new_img.png", filec)
             email.attach("new_img2.png", filec2)
             email.send()
+    os.remove("polls/static/polls/images/new_img.png")
+    os.remove("polls/static/polls/images/new_img2.png")
 
 
 def mono_check(username):
