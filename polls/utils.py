@@ -44,7 +44,7 @@ def create_phys_ticket(link, email_to):
     paths = "static/polls/images/"
 
     url = pyqrcode.create(link)
-    url.png(paths + 'myqr.png', scale = 6)
+    url.png('myqr.png', scale = 6)
     front_img = Image.open(paths + '1.png')
     back_img = Image.open(paths + '2.png')
     qr = Image.open(paths + 'myqr.png')
