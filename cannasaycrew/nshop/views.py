@@ -94,7 +94,8 @@ class VerificationView(View):
             user.save()
             messages.success(request,"GJ")
             return redirect('fine_asses')
+    
         except Exception as ex:
             print(ex)
         return redirect('login')
-
+      

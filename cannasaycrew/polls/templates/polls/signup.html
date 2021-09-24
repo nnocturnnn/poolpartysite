@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <link type="text/css" rel="stylesheet" href="{% static 'polls/css/login.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
@@ -17,9 +17,11 @@
         <div class="row">
             <div class="col-md-6 mx-auto p-0">
                 <div class="card">
-                    <form onsubmit="event.preventDefault()" class="box">
-                        <h1>Login</h1>
-                        <p class="text-muted"> Please enter your login and password!</p> <input type="text" name="" placeholder="Username"><input type="text" name="" placeholder="Email"><input type="password" name="" placeholder="Password"><input type="text" name="" placeholder="re-password"> <a class="forgot text-muted" href="signin">Alredy have account?</a></br> <input type="submit" name="" value="Login" href="#">
+                    <form method="POST" class="box">
+                        <h1>Sign Up</h1>
+                        {% csrf_token %}
+                        <p class="text-muted"> Please enter your login, email and password!</p> <input type="text" name="user" placeholder="Username"><input type="email" name="email" placeholder="Email"><input type="password" name="pass1" placeholder="Password"><input type="password" name="pass2" placeholder="re-password"> <a class="forgot text-muted" href="signin">Alredy have account?</a></br>
+                        <input type="submit" name="" value="Sign Up" href="signup">
                         <div class="col-md-12">
                             <ul class="social-network social-circle">
                                 <li><a href="/polls/" class="back" title="back"><i class="fas fa-arrow-circle-left"></a></i>

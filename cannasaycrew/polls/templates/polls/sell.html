@@ -1,8 +1,10 @@
 {% extends "./base.html" %}
 {% block content %}
+
 <section class="py-5">
+    {% if user.is_authenticated == True %}
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
+        <div class="row gx-4 gx-lg-4 row-cols-1 row-cols-md-3 row-cols-xl-3 justify-content-center">
             <div class="col mb-5">
                 <div id="card_item" class="card h-100 bg-dark text-white">
                     <!-- Sale badge-->
@@ -93,7 +95,7 @@
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="#">Buy</a></div>
+                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="detail2">Buy</a></div>
                     </div>
                 </div>
             </div>
@@ -120,11 +122,15 @@
                     </div>
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="#">Buy</a></div>
+                        <div class="text-center"><a class="btn btn-outline-light mt-auto" href="detail1">Buy</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% if user.is_authenticated %}
+    
+    {% endif %}
 </section>
 {% endblock %}

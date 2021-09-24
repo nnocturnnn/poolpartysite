@@ -17,9 +17,10 @@
         <div class="row">
             <div class="col-md-6 mx-auto p-0">
                 <div class="card">
-                    <form onsubmit="event.preventDefault()" class="box">
+                    <form method="POST" class="box">
                         <h1>Login</h1>
-                        <p class="text-muted"> Please enter your login and password!</p> <input type="text" name="" placeholder="Username"> <input type="password" name="" placeholder="Password"> <a class="forgot text-muted" href="#">Forgot password?</a></br><a class="forgot text-muted" href="signup">Dont have account?</a> <input type="submit" name="" value="Login" href="#">
+                        {% csrf_token %}
+                        <p class="text-muted"> Please enter your login and password!</p> <input type="text" name="user" placeholder="Username"> <input type="password" name="pass" placeholder="Password"> <a class="forgot text-muted" href="#">Forgot password?</a></br><a class="forgot text-muted" href="signup">Dont have account?</a> <input type="submit" name="" value="Login" href="#">
                         <div class="col-md-12">
                             <ul class="social-network social-circle">
                                 <li><a href="/polls/" class="back" title="back"><i class="fas fa-arrow-circle-left"></a></i>
