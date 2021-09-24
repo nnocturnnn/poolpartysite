@@ -66,6 +66,7 @@ def register(request):
                 messages.info(request,'Password not matching!!')
                 return redirect('/polls/signup')
         except Exception as e:
+            print(e)
             return redirect('/polls/')
     else:
         return render(request, "polls/signup.html")
