@@ -1,0 +1,131 @@
+
+:root {
+      --background:  #FFFFFF;
+      --color0:      #F1F1F1;
+      --color1:      #ED665B;
+      --color2:      #39B8A5;
+      --color3:      #F98F3D;
+      --color4:      #1972E7;
+      --color5:      #AE5BF6;
+      --color6:      #4DCCE5;
+      --color7:      #101010;
+      --color8:      #9F9F9F;
+      --color9:      #ED3D2E;
+      --color10:     #16B8A0;
+      --color11:     #F97916;
+      --color12:     #0868E7;
+      --color13:     #9422F6;
+      --color14:     #10C2E5;
+      --color15:     #656565;
+
+      --main-bg:     #FAFAFA;
+      --navbar-bg:   #2A2A2A;
+      --light-green: #C8F9E3;
+      --navbar-bg-hover:   #3A3A3A;
+      --shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      --strong-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+
+
+#opac {
+    opacity: 0.7;
+    color: black;
+}
+
+.footer {
+    height: 50px;
+    margin-top: -50px;
+}
+
+#foo {
+    background-color: black;
+    opacity: 0.8;
+}
+
+#c_but {
+position: relative;
+top:0;
+left:0;
+width: 100%;
+height: 100vh;
+transform: translate(0,-56PX);
+}
+#c_but a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+    
+
+.wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auction-card {
+    box-shadow: var(--shadow);
+    display: inline-block;
+    flex: 1 0 21%;
+    /* border-radius: 12px; */
+    padding: 20px;
+    margin: 6px;
+    margin-top: 40px;
+    /* width: 20%; */
+    /* height: 30%; */
+    width: 300px;
+    /* height:200px; */
+    text-decoration: none;
+    color: var(--color7);
+}
+.auction-card:hover {
+    box-shadow: var(--strong-shadow);
+    transition: .3s;
+}
+
+.auction-card-title {
+    font-weight: bold;
+    color: var(--color7);
+    font-size: x-large;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.auction-card-value {
+    font-weight: bold;
+    color: black;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    float: right;
+}
+
+.auction-card-inactive {
+    font-weight: bold;
+    color: var(--background);
+    background: black;
+    padding: 10px;
+    float: left;
+}
+
+.auction_image_index {
+    /* display: flex; */
+    /* width:100%; */
+
+    /* width:200px; */
+    /* height:200px; */
+    /* border-radius: 12px; */
+
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    width:300px;
+    height:300px;
+
+    object-fit: cover;
+    margin-bottom: 10px;
+    /* border-radius: 12px; */
+}
